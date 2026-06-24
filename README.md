@@ -63,6 +63,15 @@ BUILD SUCCESS, indica que o empacotamento foi concluído corretamente.
 
 ---
 
+## Execução da Aplicação
+Após a realização do build da aplicação por meio do comando `mvn clean package`, será gerado o arquivo executável no formato JAR no diretório `target/`, como por exemplo `api-carros-1.0-SNAPSHOT.jar`.
+Para executar o sistema compilado, é necessário ter o Java previamente instalado e configurado no ambiente.
+Em seguida, deve-se acessar o diretório raiz do projeto via terminal e executar o comando `java -jar target/api-carros-1.0-SNAPSHOT.jar`.
+Após a execução, a aplicação será iniciada no terminal, apresentando um menu interativo com as opções disponíveis para gerenciamento dos veículos, como cadastro e listagem de carros.
+Alternativamente, durante o desenvolvimento, o sistema também pode ser executado diretamente pela classe principal `MenuCarroApp`, por meio de uma IDE como o IntelliJ IDEA.
+
+---
+
 ## Dependências
 Principais bibliotecas utilizadas:
 - Jackson Databind 2.17.0 (para serialização/desserialização JSON)
@@ -72,6 +81,8 @@ Principais bibliotecas utilizadas:
 
 ## Banco de Dados
 O projeto utiliza um banco de dados SQLite local:carros.db
+
+---
 
 ## Execução da Aplicação
 A aplicação pode ser executada a partir da classe principal:MenuCarroApp.java
@@ -87,4 +98,3 @@ Ao executar, será exibido um menu interativo no terminal:SISTEMA DE CARROS
 - Integração com outros bancos de dados (MySQL, PostgreSQL)
 - Implementação de validações e tratamento de erros mais robustos
 - Criação de testes automatizados
-
