@@ -1,49 +1,85 @@
 # API Carros
 
-# Descrição
-Projeto desenvolvido em Java para gerenciamento de loja de venda de veículos, utilizando SQLite como banco de dados e Maven para gerenciamento das dependências.
-O sistema implementa operações de CRUD (Create, Read, Update e Delete), permitindo cadastrar, consultar, atualizar e excluir carros.
+## Descrição
+Aplicação desenvolvida em Java para gerenciamento de uma loja de venda de veículos.  
+O sistema permite realizar operações de CRUD (Create, Read, Update e Delete), possibilitando o cadastro, consulta, atualização e exclusão de carros.
 
-# Requisitos
-Para executar o projeto, é necessário possuir:
-Software:
-- Java JDK 24
+A aplicação pode ser executada via:
+- Interface de linha de comando (menu interativo)
+- Estrutura preparada para evolução como API HTTP (caso o servidor esteja habilitado)
+
+---
+
+## Arquitetura do Projeto
+O projeto segue uma estrutura organizada em camadas:
+- **controller** → Responsável pela entrada e roteamento das requisições
+- **service** → Regras de negócio
+- **repository** → Acesso ao banco de dados
+- **model** → Entidades do sistema
+- **database** → Configuração e conexão com o banco (SQLite)
+- **app** → Classe principal com menu interativo
+
+---
+
+## Requisitos
+
+### Software necessário:
+- Java JDK 17 ou superior (recomendado LTS)
 - Apache Maven 3.9 ou superior
 - SQLite 3.x
 - IntelliJ IDEA (ou outra IDE compatível)
 
-# Dependências
-- Jackson Databind 2.17.0
-- SQLite JDBC 3.46.0.0
+---
 
-# Banco de Dados
-O projeto utiliza um banco SQLite local:
-carro.db
+## Dependências
+Principais bibliotecas utilizadas:
+- Jackson Databind 2.17.0 (para serialização/desserialização JSON)
+- SQLite JDBC 3.46.0.0 (conectividade com banco SQLite)
 
-# Compilação da Aplicação
-Antes de iniciar a compilação, certifique-se de que o Java JDK e o Apache Maven estejam devidamente instalados e configurados no ambiente.
-Execute o comando abaixo na raiz do projeto:
-- mvn clean compile durante a execução, o Maven realiza as seguintes etapas:
-- Remove os artefatos gerados em compilações anteriores (clean);
-- Resolve e baixa as dependências definidas no arquivo pom.xml;
-- Compila os arquivos-fonte localizados em src/main/java;
-- Gera os arquivos compilados (.class) no diretório target/classes.
-- A compilação será considerada concluída com sucesso quando a mensagem abaixo for exibida no terminal:
+---
+
+## Banco de Dados
+O projeto utiliza um banco de dados SQLite local:carros.db
+
+## Execução da Aplicação
+A aplicação pode ser executada a partir da classe principal:MenuCarroApp.java
+Ao executar, será exibido um menu interativo no terminal:SISTEMA DE CARROS
+1 - Cadastrar carro
+2 - Listar carros
+...
+
+## Compilação da Aplicação
+Antes de compilar, certifique-se de que o Java e o Maven estão instalados e configurados.
+
+Execute na raiz do projeto:
+mvn clean compile
+O que acontece na compilação:
+- Remove arquivos de builds anteriores (clean)
+- Resolve e baixa dependências do pom.xml
+- Compila os arquivos em src/main/java
+- Gera arquivos .class em target/classes
+
+A compilação será concluída com sucesso quando aparecer:
 BUILD SUCCESS
 
-# Build (Empacotamento da Aplicação)
-O processo de build tem como objetivo empacotar a aplicação em um arquivo executável no formato JAR (Java Archive), contendo todos os arquivos compilados e dependências necessárias para execução.
-Para gerar o pacote da aplicação, deve-se executar o seguinte comando na raiz do projeto:
+## Build (Empacotamento)
+Para gerar o artefato da aplicação (JAR), execute:
 mvn clean package
-O que este processo realiza:
-- Executa a limpeza do projeto, removendo arquivos de builds anteriores (clean);
-- Compila novamente todos os arquivos-fonte do projeto;
-- Executa os testes configurados (caso existam);
-- Empacota a aplicação em um arquivo .jar dentro da pasta target/;
-- Inclui os arquivos compilados (.class) e as dependências necessárias para execução.
+Etapas do build:
+- Limpeza do projeto
+- Compilação dos fontes
+- Execução de testes (caso existam)
+- Empacotamento em arquivo .jar
 
-Resultado do Build
-Após a execução bem-sucedida do comando, será gerado o seguinte arquivo:
+## Resultado do Build
+Após a execução, será gerado o arquivo:
 target/api-carros-1.0-SNAPSHOT.jar
-A mensagem BUILD SUCCESS indica que o empacotamento foi concluído corretamente e que o artefato da aplicação está pronto para execução ou distribuição.
+A mensagem:
+BUILD SUCCESS, indica que o empacotamento foi concluído corretamente.
+
+## Possíveis Evoluções
+Exposição completa como API REST
+Integração com outros bancos de dados (MySQL, PostgreSQL)
+Implementação de validações e tratamento de erros mais robustos
+Criação de testes automatizados
 
