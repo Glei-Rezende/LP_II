@@ -22,12 +22,44 @@ O projeto segue uma estrutura organizada em camadas:
 ---
 
 ## Requisitos
-
 ### Software necessário:
 - Java JDK 17 ou superior (recomendado LTS)
 - Apache Maven 3.9 ou superior
 - SQLite 3.x
 - IntelliJ IDEA (ou outra IDE compatível)
+
+---
+
+## Compilação da Aplicação
+Antes de compilar, certifique-se de que o Java e o Maven estão instalados e configurados.
+
+Execute na raiz do projeto:
+mvn clean compile
+O que acontece na compilação:
+- Remove arquivos de builds anteriores (clean)
+- Resolve e baixa dependências do pom.xml
+- Compila os arquivos em src/main/java
+- Gera arquivos .class em target/classes
+
+A compilação será concluída com sucesso quando aparecer:
+BUILD SUCCESS
+
+---
+
+## Build (Empacotamento)
+Para gerar o artefato da aplicação (JAR), execute:
+mvn clean package
+Etapas do build:
+- Limpeza do projeto
+- Compilação dos fontes
+- Execução de testes (caso existam)
+- Empacotamento em arquivo .jar
+
+## Resultado do Build
+Após a execução, será gerado o arquivo:
+target/api-carros-1.0-SNAPSHOT.jar
+A mensagem:
+BUILD SUCCESS, indica que o empacotamento foi concluído corretamente.
 
 ---
 
@@ -48,34 +80,7 @@ Ao executar, será exibido um menu interativo no terminal:SISTEMA DE CARROS
 2 - Listar carros
 ...
 
-## Compilação da Aplicação
-Antes de compilar, certifique-se de que o Java e o Maven estão instalados e configurados.
-
-Execute na raiz do projeto:
-mvn clean compile
-O que acontece na compilação:
-- Remove arquivos de builds anteriores (clean)
-- Resolve e baixa dependências do pom.xml
-- Compila os arquivos em src/main/java
-- Gera arquivos .class em target/classes
-
-A compilação será concluída com sucesso quando aparecer:
-BUILD SUCCESS
-
-## Build (Empacotamento)
-Para gerar o artefato da aplicação (JAR), execute:
-mvn clean package
-Etapas do build:
-- Limpeza do projeto
-- Compilação dos fontes
-- Execução de testes (caso existam)
-- Empacotamento em arquivo .jar
-
-## Resultado do Build
-Após a execução, será gerado o arquivo:
-target/api-carros-1.0-SNAPSHOT.jar
-A mensagem:
-BUILD SUCCESS, indica que o empacotamento foi concluído corretamente.
+---
 
 ## Possíveis Evoluções
 - Exposição completa como API REST
