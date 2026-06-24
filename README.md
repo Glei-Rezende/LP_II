@@ -78,8 +78,8 @@ A mensagem:
 BUILD SUCCESS, indica que o empacotamento foi concluído corretamente.
 
 ## Possíveis Evoluções
-Exposição completa como API REST
-Integração com outros bancos de dados (MySQL, PostgreSQL)
-Implementação de validações e tratamento de erros mais robustos
-Criação de testes automatizados
+- Exposição completa como API REST
+- Integração com outros bancos de dados (MySQL, PostgreSQL)
+- Implementação de validações e tratamento de erros mais robustos
+- Criação de testes automatizados
 
