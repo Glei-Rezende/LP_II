@@ -1,12 +1,18 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Fabricante extends BaseEntity {
 
     private String nome;
-    private List<Carro> carros = new ArrayList<>();
+    private String paisOrigem;
+
+    public Fabricante() {
+    }
+
+    public Fabricante(Long id, String nome, String paisOrigem) {
+        this.setId(id);
+        this.nome = nome;
+        this.paisOrigem = paisOrigem;
+    }
 
     public String getNome() {
         return nome;
@@ -16,7 +22,11 @@ public class Fabricante extends BaseEntity {
         this.nome = nome;
     }
 
-    public List<Carro> getCarros() {
-        return carros;
+    public String getPaisOrigem() {
+        return paisOrigem;
+    }
+
+    public void setPaisOrigem(String paisOrigem) {
+        this.paisOrigem = paisOrigem;
     }
 }

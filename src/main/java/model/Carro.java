@@ -9,8 +9,13 @@ public class Carro extends BaseEntity {
     private String cor;
     private int ano;
 
-    private Fabricante fabricante; // 1..N
-    private List<Acessorio> acessorios = new ArrayList<>(); // N..N
+    private Fabricante fabricante;
+
+    private List<Acessorio> acessorios;
+
+    public Carro() {
+        acessorios = new ArrayList<>();
+    }
 
     public String getModelo() {
         return modelo;
@@ -46,5 +51,9 @@ public class Carro extends BaseEntity {
 
     public List<Acessorio> getAcessorios() {
         return acessorios;
+    }
+
+    public void setAcessorios(List<Acessorio> acessorios) {
+        this.acessorios = acessorios;
     }
 }
